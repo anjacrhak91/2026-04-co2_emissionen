@@ -1,0 +1,28 @@
+:root {
+            --bulma-primary: #008009;
+            --bulma-primary-h: 124deg;
+            --bulma-primary-s: 100%;
+            --bulma-primary-l: 25%;
+            --bulma-primary-invert-l: 100%;
+
+            --bulma-link-text: #333333;
+            --bulma-link-text-h: 0deg;
+            --bulma-link-text-s: 0%;
+            --bulma-link-text-l: 20%;
+
+            --bulma-text: #333333;
+            --bulma-text-h: 0deg;
+            --bulma-text-s: 0%;
+            --bulma-text-l: 20%;
+
+            --bulma-info: #DEEDDF;
+            --bulma-info-h: 124deg;
+            --bulma-info-s: 29%;
+            --bulma-info-l: 90%;
+}
+
+
+.has-border-primary {
+    border: 1px solid var(--bulma-primary);
+    border-radius: 10px;
+}
