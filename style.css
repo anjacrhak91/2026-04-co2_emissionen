@@ -21,6 +21,10 @@
             --bulma-info-l: 90%;
 }
 
+html, body {
+    overflow-x: hidden; /* Verhindert horizontalen Scroll komplett */
+    width: 100%;
+}
 
 .has-border-primary {
     border: 1px solid var(--bulma-primary);
@@ -33,4 +37,39 @@
 
 .link-hover-primary:hover {
     color: var(--bulma-primary);
+}
+
+.navbar-item:hover {
+    background-color: transparent;
+    color: var(--bulma-primary);
+}
+.navbar-item:active {
+    color: var(--bulma-primary);
+}
+
+.navbar-start {
+    gap: 2rem;
+}
+
+.navbar-burger {
+    color: var(--bulma-primary);
+    background-color: var(--bulma-info);
+}
+
+@media screen and (max-width: 767px) {
+    #privacy-links {
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #privacy-links {
+        justify-content: right;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #footer-logo {
+        text-align: center;
+    }
 }

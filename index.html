@@ -9,41 +9,39 @@
     <link rel="icon" type="image/x-icon" href="/img/logoipsum-415.svg">
 </head>
 <body>
-    <header>
-        <section class="section has-navbar-fixed-top">
-            <nav class="navbar is-fixed-top has-background-info py-3" role="navigation" aria-label="main navigation">
-                <div class="navbar-brand">
-                    <a class="navbar-item" href="/index.html">
-                    <figure class="image mr-6">
-                        <img src="img/logoipsum-414.svg" alt="Logo">
-                    </figure>
-                    </a>
-        
-                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    </a>
+    <header class="section has-navbar-fixed-top">
+        <nav class="navbar is-spaced is-fixed-top has-background-info" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/index.html">
+                <figure class="image mr-6">
+                    <img src="img/logoipsum-414.svg" alt="Logo">
+                </figure>
+                </a>
+    
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                </a>
+            </div>
+    
+            <div id="navbarBasicExample" class="navbar-menu has-text-weight-bold">
+                <div class="navbar-start">
+                <a class="navbar-item" href="/index.html">
+                    Home
+                </a>
+    
+                <a class="navbar-item" href="/vergleich.html">
+                    Vergleich
+                </a>
+    
+                <a class="navbar-item" href="/hintergrund.html">
+                    Hintergrund
+                </a>
                 </div>
-        
-                <div id="navbarBasicExample" class="navbar-menu has-text-weight-bold">
-                    <div class="navbar-start">
-                    <a class="navbar-item" href="/index.html">
-                        Home
-                    </a>
-        
-                    <a class="navbar-item" href="/vergleich.html">
-                        Vergleich
-                    </a>
-        
-                    <a class="navbar-item" href="/hintergrund.html">
-                        Hintergrund
-                    </a>
-                    </div>
-                </div>
-            </nav>
-        </section>
+            </div>
+        </nav>
     </header>
 
     <main>
@@ -62,7 +60,7 @@
                     </div>
                 </div>
             </div>
-            <div class="section">
+            <div class="container px-3">
                 <nav class="level is-mobile has-border-primary p-3" id="local-nav">
                         <p class="level-item">
                             <a class="link has-text-weight-semibold link-hover-primary" href="#eckdaten">Eckdaten</a>
@@ -85,20 +83,20 @@
                 <div class="level">
                     <div class="level-item has-text-centered">
                         <div>
-                            <p class="title">125</p>
-                            <p class="heading">Länder</p>
+                            <p class="title is-2">125</p>
+                            <p class="heading has-text-weight-semibold">Länder</p>
                         </div>
                     </div>
                     <div class="level-item has-text-centered">
                         <div>
-                            <p class="title">129.2093M </p>
-                            <p class="heading">Tonnen</p>
+                            <p class="title is-2">129.2093M </p>
+                            <p class="heading has-text-weight-semibold">Tonnen</p>
                         </div>
                     </div>
                     <div class="level-item has-text-centered">
                         <div>
-                            <p class="title">83</p>
-                            <p class="heading">Unternehmen</p>
+                            <p class="title is-2">83</p>
+                            <p class="heading has-text-weight-semibold">Unternehmen</p>
                         </div>
                     </div>
                 </div>
@@ -166,7 +164,7 @@
             </div>
         </section>
 
-        <section class="section is-medium" id="einblicke">
+        <section class="section" id="einblicke">
             <div class="columns is-8">
                 <div class="column is-three-fifths">
                     <img class="has-border-radius-medium" src="/img/co2-emissionen-klimawandel-100-1920x1080.jpg" alt="Dummy-Bild">
@@ -368,7 +366,7 @@
     <footer class="footer has-background-info">
             <div class="container">
                 <div class="columns is-vcentered">
-                    <div class="column is-one-quarter">
+                    <div id="footer-logo" class="column is-one-quarter">
                         <img src="/img/logoipsum-414.svg" alt="CO2-Footprint-Vergleich Logo" width="30%">
                         <p class="is-underlined"><a href="mailto:anja.crhak@iu-study.org">anja.crhak@iu-study.org</a></p>
                     </div>
@@ -377,7 +375,7 @@
                     </div>
                     <div class="column is-one-quarter has-text-right">
                         <nav>
-                            <ul class="is-flex is-justify-content-right is-underlined" style="gap: 1rem;">
+                            <ul id="privacy-links" class="is-flex is-underlined" style="gap: 1rem;">
                                 <li><a href="#">Impressum</a></li>
                                 <li><a href="#">Datenschutz</a></li>
                             </ul>
