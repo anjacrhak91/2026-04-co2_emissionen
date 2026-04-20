@@ -24,5 +24,13 @@
 
 .has-border-primary {
     border: 1px solid var(--bulma-primary);
-    border-radius: 10px;
+    border-radius: 0.75rem;
+}
+
+.has-border-radius-medium {
+    border-radius: 0.75rem;
+}
+
+.link-hover-primary:hover {
+    color: var(--bulma-primary);
 }
