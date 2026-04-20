@@ -35,6 +35,10 @@ html, body {
     border-radius: 0.75rem;
 }
 
+.has-border-radius-small {
+    border-radius: 0.25rem;
+}
+
 .link-hover-primary:hover {
     color: var(--bulma-primary);
 }
