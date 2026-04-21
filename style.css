@@ -81,3 +81,8 @@ html, body {
 .has-gap-medium {
     gap: 0.5rem;
 }
+/*Worttrennung bei langen Links*/
+.content a {
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
