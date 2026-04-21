@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@bluefantail/bulma-list/css/bulma-list.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <title>Der CO<sub>2</sub>-Footprint-Vergleich</title>
+    <link rel="icon" type="image/x-icon" href="/img/logoipsum-415.svg">
+</head>
+
+<body>
+    <header class="section has-navbar-fixed-top">
+        <nav class="navbar is-spaced is-fixed-top has-background-info" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/index.html">
+                <figure class="image mr-6">
+                    <img src="img/logoipsum-414.svg" alt="Logo">
+                </figure>
+                </a>
+    
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                </a>
+            </div>
+    
+            <div id="navbarBasicExample" class="navbar-menu has-text-weight-bold">
+                <div class="navbar-start">
+                <a class="navbar-item" href="/index.html">
+                    Home
+                </a>
+    
+                <a class="navbar-item" href="/vergleich.html">
+                    Vergleich
+                </a>
+    
+                <a class="navbar-item" href="/hintergrund.html">
+                    Hintergrund
+                </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-body">
+                <div class="columns is-8">
+                    <div class="column">
+                        <img class="has-border-radius-medium" src="/img/co2-emissionen-klimawandel-100-1920x1080.jpg" alt="Dummy-Bild">
+                    </div>
+                    
+                    <div class="column is-two-fifths is-align-content-center">
+                        <h1 class="title">Der interaktive CO<sub>2</sub>-Emissionsvergleich</h1>
+                        <p>Vergleiche die jährlichen CO-Emissionswerte von Ländern und Unternehmen weltweit mit unseren unabhängigen Daten.</p>
+                        <div class="field is-grouped">
+                            <p><a class="button is-primary mt-5" href="#vergleich">Zum Vergleich</a></p>
+                            <p><a class="button is-primary is-outlined mt-5" href="#anleitung">Zur Anleitung</a></p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="container px-3">
+                <nav class="level is-mobile has-border-primary p-3" id="local-nav">
+                        <p class="level-item">
+                            <a class="link has-text-weight-semibold link-hover-primary" href="#vergleich">Vergleich</a>
+                        </p>
+                        <p class="level-item">
+                            <a class="link has-text-weight-semibold link-hover-primary" href="#statistiken">Anleitung</a>
+                        </p>
+                        <p class="level-item">
+                            <a class="link has-text-weight-semibold link-hover-primary" href="#quellen">Quellen</a>
+                        </p>
+                </nav>
+        </div>
+        </section>
+
+        <section class="section is-medium">
+
+        </section>
+
+        <section class="section is-medium has-background-info" id="anleitung">
+            <h2 class="title mb-6">Wie kannst du die Daten analysieren?</h2>
+
+            <div class="container">
+                <div class="columns is-8">
+                    <div class="column">
+                        <div class="card">
+                            <div class="card-content">
+                                <h3 class="title is-4">Sortieren</h3>
+                                <div class="content">
+                                    <p>Klicke auf den Spaltenkopf, um die Daten in eine gewünschte Reihenfolge zu bringen:</p>
+                                    <p class="has-text-weight-semibold">Akteure & Sitz:</p>
+                                    <p>Alphabetische Sortierung für gezieltes Auffinden (A-Z oder Z-A)</p>
+                                    <p class="has-text-weight-semibold">Typ:</p>
+                                    <p>Gruppiert nach Kategorie - Länder und Unternehmen</p>
+                                    <p class="has-text-weight-semibold">Emissionen:</p>
+                                    <p>Numerische Sortierung, von den höchsten zu den niedrigsten Werten oder umgekehrt, um z.B. die Top-Akteure sofort zu identifizieren</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card">
+                            <div class="card-content">
+                                <h3 class="title is-4">Filtern</h3>
+                                <div class="content">
+                                    <p>Du kannst die Daten nach bestimmten Kriterien filtern. Diese Filter stehen dir zur Auswahl: </p>
+                                    <p class="has-text-weight-semibold">Kontinent:</p>
+                                    <p>Lasse dir nur die Akteure eines bestimmten Kontinents anzeigen.</p>
+                                    <p class="has-text-weight-semibold">Typ:</p>
+                                    <p>Filtere die Daten nach dem Typ des Akteurs - Land oder Unternehmen</p>
+                                    <p class="has-text-weight-semibold">Top-Ranking:</p>
+                                    <p>Lasse dir zum Beispiel die Top 10 oder nur die Akteure mit über 500 Millionen Tonnen anzeigen</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card">
+                            <div class="card-content">
+                                <h3 class="title is-4">Suchen</h3>
+                                <div class="content">
+                                    <p>Grenze die Daten ein, indem du einen bestimmten Begriff, z.B. ein Land oder ein Konzern in das Suchfeld eingibst. Es werden dir nur die relevanten Ergebnisse angezeigt.</p>
+                                    <p class="has-text-weight-semibold">Echtzeit-Suche:</p>
+                                    <p>Mit der Echtzeit-Suche aktualisiert die Tabelle bereits während der Eingabe.</p>
+                                    <p class="has-text-weight-semibold">Kombination:</p>
+                                    <p>Die Filter- und Suchfunktion lassen sich in Echtzeit miteinander kombinieren. Wenn du einen Suchbegriff eingibst und einen Filter auswählst, werden dir nur die Ergebnisse anzezeigt, die darauf zutreffen.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section is-medium" id="quellen">
+            <h2 class="title mb-6">Woher stammen die Daten?</h2>
+
+            <div class="container is-fluid">
+                <div class="columns is-8">
+                    <div class="column">
+                        <div class="card">
+                            <div class="card-content">
+                                <h3 class="title is-4">Our World in Data</h3>
+                                <div class="content">
+                                    <p>Hannah Ritchie and Max Roser (2020) - “CO₂ emissions” Published online at OurWorldinData.org. Retrieved from: '<a class="is-underlined" href="https://archive.ourworldindata.org/20260417-112857/co2-emissions.html">https://archive.ourworldindata.org/20260417-112857/co2-emissions.html</a>' [Online Resource] (archived on April 17, 2026).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card">
+                            <div class="card-content">
+                                <h3 class="title is-4">Ecological Economics</h3>
+                                <div class="content">
+                                    <p>Miklin, X., Neier, T., Sturn, S., & Zwickl, K. (2025). Carbon Giants: Exploring the Top 100 Industrial CO2 Emitters in the EU. Ecological Economics, 228, 108419. <a class="is-underlined" href="https://doi.org/https://doi.org/10.1016/j.ecolecon.2024.108419">https://doi.org/https://doi.org/10.1016/j.ecolecon.2024.108419</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card">
+                            <div class="card-content">
+                                <h3 class="title is-4">Influence Map</h3>
+                                <div class="content">
+                                    <p>Influence Map. (2026). Carbon Majors: 2024 Data Update. An InfluenceMap Briefing. <a class="is-underlined" href="https://carbonmajors.org/file/c1d67f450ec04893b03b23566357b978">https://carbonmajors.org/file/c1d67f450ec04893b03b23566357b978</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                    
+        </section>
+
+    </main>
+
+    <footer class="footer has-background-info">
+            <div class="container">
+                <div class="columns is-vcentered">
+                    <div id="footer-logo" class="column is-one-quarter">
+                        <img src="/img/logoipsum-414.svg" alt="CO2-Footprint-Vergleich Logo" width="30%">
+                        <p class="is-underlined"><a href="mailto:anja.crhak@iu-study.org">anja.crhak@iu-study.org</a></p>
+                    </div>
+                    <div class="column has-text-centered">
+                        <p>&copy; 2026 CO<sub>2</sub>-Footprint-Vergleich GmbH</p>
+                    </div>
+                    <div class="column is-one-quarter has-text-right">
+                        <nav>
+                            <ul id="privacy-links" class="is-flex is-underlined" style="gap: 1rem;">
+                                <li><a href="#">Impressum</a></li>
+                                <li><a href="#">Datenschutz</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+    </footer>
+</body>
