@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@bluefantail/bulma-list/css/bulma-list.min.css">
     <link rel="stylesheet" href="/style.css">
     <title>Der Hintergrund zu unserem CO<sub>2</sub>-Footprint-Vergleich | Hintergrund</title>
     <link rel="icon" type="image/x-icon" href="/img/logoipsum-415.svg">
@@ -75,9 +76,6 @@
                             <a class="link has-text-weight-semibold link-hover-primary" href="#folgen">Folgen</a>
                         </p>
                         <p class="level-item">
-                            <a class="link has-text-weight-semibold link-hover-primary" href="#loesungen">Lösungen</a>
-                        </p>
-                        <p class="level-item">
                             <a class="link has-text-weight-semibold link-hover-primary" href="#quellen">Quellen</a>
                         </p>
                 </nav>
@@ -120,8 +118,10 @@
             <div class="columns is-8">
 
                 <div class="column is-align-content-center">
-                    <h2 class="title mb-6">Warum stecken wir in einer Klimakrise?</h2>
-                    <p class="is-size-5">Seit der Industrialisierung sind globale Änderungen im Stoffhaushalt der Atmosphäre zu erkennen. Ursache dafür sind menschliche Aktivitäten. Die Konzentration von Kohlendioxid (CO2) ist bis 2019 weltweit um über 48 Prozent gestiegen, von Methan (CH4) um 160 Prozent und von Distickstoffmonoxids (N2O) um 23 Prozent im Vergleich zu vorindustriellen Zeiten. Diese Treibhausgase, die sich in der Erdatmosphäre befinden, absorbieren Sonnenenergie und von der Erdoberfläche abstrahlende Wärme. Die Wärme wird so in der Atmosphäre gehalten und können nicht ins Weltall entweichen. Dieser Prozess wird als Treibhauseffekt bezeichnet. Nur so ist Leben auf der Erde möglich. Viele dieser Treibhausgase sind natürlicher Bestandteil der Atmosphäre. Durch menschliche Aktivitäten wird jedoch die Menge an Treibhausgasen enorm erhöht. Der Treibhauseffekt wird verstärkt und dies führt zur globalen Erwärmung. Laut Europäischer Umweltagentur besteht der Großteil der Gesamtemissionen zum Großteil (ca. 80,6 %) aus Kohlendioxid (CO2). Methan (CH4) macht einen Anteil von ca. 12,1 %, Distickstoffmonozid (N2O) 5,3 % und Fluorierte Gase einen Anteil von ca. 2,0 % aus. CO2 ist demnach das am meisten freigesetzte Treibhausgas.</p>
+                    <div class="content">
+                        <h2 class="title mb-6">Warum stecken wir in einer Klimakrise?</h2>
+                        <p class="is-size-5">Seit der Industrialisierung sind globale Änderungen im Stoffhaushalt der Atmosphäre zu erkennen. Ursache dafür sind menschliche Aktivitäten. Die Konzentration von Kohlendioxid (CO2) ist bis 2019 weltweit um über 48 Prozent gestiegen, von Methan (CH4) um 160 Prozent und von Distickstoffmonoxids (N2O) um 23 Prozent im Vergleich zu vorindustriellen Zeiten. Diese Treibhausgase, die sich in der Erdatmosphäre befinden, absorbieren Sonnenenergie und von der Erdoberfläche abstrahlende Wärme. Die Wärme wird so in der Atmosphäre gehalten und können nicht ins Weltall entweichen. Dieser Prozess wird als Treibhauseffekt bezeichnet. Nur so ist Leben auf der Erde möglich. Viele dieser Treibhausgase sind natürlicher Bestandteil der Atmosphäre. Durch menschliche Aktivitäten wird jedoch die Menge an Treibhausgasen enorm erhöht. Der Treibhauseffekt wird verstärkt und dies führt zur globalen Erwärmung. Laut Europäischer Umweltagentur besteht der Großteil der Gesamtemissionen zum Großteil (ca. 80,6 %) aus Kohlendioxid (CO2). Methan (CH4) macht einen Anteil von ca. 12,1 %, Distickstoffmonozid (N2O) 5,3 % und Fluorierte Gase einen Anteil von ca. 2,0 % aus. CO2 ist demnach das am meisten freigesetzte Treibhausgas.</p>
+                    </div>
                 </div>
 
                 <div class="column is-two-fifths is-align-content-center">
@@ -133,40 +133,50 @@
 
         <section class="section has-background-info mt-6" id="ursachen">
                 <h2 class="title mb-6">Was verursacht den Anstieg der Treibhausgase?</h2>
-                <div class="columns is-8">
-                    <div class="column has-text-centered">
-                        <figure class="image is-128x128 is-inline-block">
-                            <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
-                        </figure>
-                        <p class="has-text-weight-semibold px-4 pt-3 is-size-5">Verbrennung von Kohle, Erdöl und Erdgas (CO<sub>2</sub>, N<sub>2</sub>O)</p>
+                <div class="columns is-multiline ">
+                    <div class="column is-flex is-flex-direction-column is-full-mobile is-one-third-tablet is-one-fifth-desktop">
+                        <div class="container has-text-centered">
+                            <figure class="image is-128x128 is-inline-block">
+                                <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
+                            </figure>
+                            <p class="has-text-weight-semibold px-4 pt-3 is-size-5">Verbrennung von Kohle, Erdöl und Erdgas (CO<sub>2</sub>, N<sub>2</sub>O)</p>
+                        </div>
                     </div>
 
-                    <div class="column has-text-centered">
-                        <figure class="image is-128x128 is-inline-block">
-                            <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
-                        </figure>
-                        <p class="has-text-weight-semibold px-4 pt-3 is-size-5">Abholzung von Wäldern (CO<sub>2</sub>)</p>
+                    <div class="column is-flex is-flex-direction-column is-full-mobile is-one-third-tablet is-one-fifth-desktop">
+                        <div class="container has-text-centered">
+                            <figure class="image is-128x128 is-inline-block">
+                                <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
+                            </figure>
+                            <p class="has-text-weight-semibold px-4 pt-3 is-size-5">Abholzung von Wäldern (CO<sub>2</sub>)</p>
+                        </div>
                     </div>
 
-                    <div class="column has-text-centered">
-                        <figure class="image is-128x128 is-inline-block">
-                            <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
-                        </figure>
-                        <p class="has-text-weight-semibold px-4 pt-3 is-size-5">Intensivierung der Viehzucht (CH<sub>4</sub>)</p>
+                    <div class="column is-flex is-flex-direction-column is-full-mobile is-one-third-tablet is-one-fifth-desktop">
+                        <div class="container has-text-centered">
+                            <figure class="image is-128x128 is-inline-block">
+                                <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
+                            </figure>
+                            <p class="has-text-weight-semibold px-4 pt-3 is-size-5">Intensivierung der Viehzucht (CH<sub>4</sub>)</p>
+                        </div>
                     </div>
 
-                    <div class="column has-text-centered">
-                        <figure class="image is-128x128 is-inline-block">
-                            <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
-                        </figure>
-                        <p class="has-text-weight-semibold px-4 pt-3 is-size-5">Stickstoffhaltige Dünger (N<sub>2</sub>O)</p>
+                    <div class="column is-flex is-flex-direction-column is-full-mobile is-one-third-tablet is-one-fifth-desktop">
+                        <div class="container has-text-centered">
+                            <figure class="image is-128x128 is-inline-block">
+                                <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
+                            </figure>
+                            <p class="has-text-weight-semibold px-4 pt-3 is-size-5">Stickstoffhaltige Dünger (N<sub>2</sub>O)</p>
+                        </div>
                     </div>
 
-                    <div class="column has-text-centered">
-                        <figure class="image is-128x128 is-inline-block">
-                            <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
-                        </figure>
-                        <p class="has-text-weight-semibold px-4 pt-3 is-size-5">Fluorierte Gase (Kühlschränke, Klimaanlagen)</p>
+                    <div class="column is-flex is-flex-direction-column is-full-mobile is-one-third-tablet is-one-fifth-desktop">
+                        <div class="container has-text-centered">
+                            <figure class="image is-128x128 is-inline-block">
+                                <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
+                            </figure>
+                            <p class="has-text-weight-semibold px-4 pt-3 is-size-5">Fluorierte Gase (Kühlschränke, Klimaanlagen)</p>
+                        </div>
                     </div>
                 </div>
         </section>
@@ -310,7 +320,7 @@
         <section class="section" id="folgen">
             <h2 class="title mb-6">Was sind die Folgen des Klimawandels</h2>
             <div class="container is-fluid">
-                <div class="columns">
+                <div class="columns is-8">
                     <div class="column">
                         <div class="card">
                             <div class="card-image">
@@ -323,12 +333,66 @@
                             </div>
                             
                             <div class="card-content">
-                                <h3 class="title is-4">Natur</h3>
-                                <p class="content">Mit unserem CO<sub>2</sub>-Footprint-Vergleich schaffen wir Sichtbarkeit, indem wir die Emissionen in Daten offenlegen. Damit fördern wir das Bewusstsein für das Ausmaß der Emissionen.</p>
+                                <h3 class="title is-4">Für die Natur</h3>
+                                <div class="media is-align-items-center">
+                                    <div class="media-left">
+                                        <figure class="image is-48x48">
+                                        <img
+                                            src="https://bulma.io/assets/images/placeholders/96x96.png"
+                                            alt="Placeholder image"
+                                        />
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p>Hitze, Dürren & Waldbrände, Überschwemmungen</p>
+                                    </div>
+                                </div>
+
+                                <div class="media is-align-items-center">
+                                    <div class="media-left">
+                                        <figure class="image is-48x48">
+                                        <img
+                                            src="https://bulma.io/assets/images/placeholders/96x96.png"
+                                            alt="Placeholder image"
+                                        />
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p>Anstieg des Meeresspiegels und Gefahr der Küstengebiete</p>
+                                    </div>
+                                </div>
+
+                                <div class="media is-align-items-center">
+                                    <div class="media-left">
+                                        <figure class="image is-48x48">
+                                        <img
+                                            src="https://bulma.io/assets/images/placeholders/96x96.png"
+                                            alt="Placeholder image"
+                                        />
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p>Versauerung der Meere, Änderungen in Strömungs- und Windmustern</p>
+                                    </div>
+                                </div>
+
+                                <div class="media is-align-items-center">
+                                    <div class="media-left">
+                                        <figure class="image is-48x48">
+                                        <img
+                                            src="https://bulma.io/assets/images/placeholders/96x96.png"
+                                            alt="Placeholder image"
+                                        />
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p>Bodenerosion, Wassermangel v.a. in südlichen Teilen der Erde</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="column">
                         <div class="card">
                             <div class="card-image">
@@ -341,12 +405,66 @@
                             </div>
                             
                             <div class="card-content">
-                                <h3 class="title is-4">Gesellschaft</h3>
-                                <p class="content">Wir vergleichen Emissionswerte von Ländern und Unternehmen weltweit unabhängig, um die Dimensionen verständlich zu machen und eine einheitliche Datenbasis zu schaffen.</p>
+                                <h3 class="title is-4">Für die Gesellschaft</h3>
+                                <div class="media is-align-items-center">
+                                    <div class="media-left">
+                                        <figure class="image is-48x48">
+                                        <img
+                                            src="https://bulma.io/assets/images/placeholders/96x96.png"
+                                            alt="Placeholder image"
+                                        />
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p>Hitzebedingte Todesfälle, Unfallgefahr durch Extremwetterereignisse</p>
+                                    </div>
+                                </div>
+
+                                <div class="media is-align-items-center">
+                                    <div class="media-left">
+                                        <figure class="image is-48x48">
+                                        <img
+                                            src="https://bulma.io/assets/images/placeholders/96x96.png"
+                                            alt="Placeholder image"
+                                        />
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p>Pflanzenschädlinge, Tierseuchen</p>
+                                    </div>
+                                </div>
+
+                                <div class="media is-align-items-center">
+                                    <div class="media-left">
+                                        <figure class="image is-48x48">
+                                        <img
+                                            src="https://bulma.io/assets/images/placeholders/96x96.png"
+                                            alt="Placeholder image"
+                                        />
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p>Vertreibung von Menschen durch natürliche Folgen</p>
+                                    </div>
+                                </div>
+
+                                <div class="media is-align-items-center">
+                                    <div class="media-left">
+                                        <figure class="image is-48x48">
+                                        <img
+                                            src="https://bulma.io/assets/images/placeholders/96x96.png"
+                                            alt="Placeholder image"
+                                        />
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p>Direkte und indirekte Auswirkung auf Produktivität und Lebensfähigkeit aller Wirtschaftssektoren</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="column">
                         <div class="card">
                             <div class="card-image">
@@ -359,15 +477,108 @@
                             </div>
                             
                             <div class="card-content">
-                                <h3 class="title is-4">Wirtschaft</h3>
-                                <p class="content">Durch objektive Daten und Vergleichbarkeit fördern wir den positiven Wandel und nehmen Unternehmen sowie Länder bei der Reduktion ihres ökologischen Fußabdrucks in die Pflicht.</p>
+                                <h3 class="title is-4">Für die Wirtschaft</h3>
+                                <div class="media is-align-items-center">
+                                    <div class="media-left">
+                                        <figure class="image is-48x48">
+                                        <img
+                                            src="https://bulma.io/assets/images/placeholders/96x96.png"
+                                            alt="Placeholder image"
+                                        />
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p>Klimaanfällige Gebäude und Infrastrukturen</p>
+                                    </div>
+                                </div>
+
+                                <div class="media is-align-items-center">
+                                    <div class="media-left">
+                                        <figure class="image is-48x48">
+                                        <img
+                                            src="https://bulma.io/assets/images/placeholders/96x96.png"
+                                            alt="Placeholder image"
+                                        />
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p>zunehmender Energiebedarf für Kühlung in Südeuropa</p>
+                                    </div>
+                                </div>
+
+                                <div class="media is-align-items-center">
+                                    <div class="media-left">
+                                        <figure class="image is-48x48">
+                                        <img
+                                            src="https://bulma.io/assets/images/placeholders/96x96.png"
+                                            alt="Placeholder image"
+                                        />
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p>Extremwetterereignisse bedrohen Teile der Energieinsfrastruktur</p>
+                                    </div>
+                                </div>
+
+                                <div class="media is-align-items-center">
+                                    <div class="media-left">
+                                        <figure class="image is-48x48">
+                                        <img
+                                            src="https://bulma.io/assets/images/placeholders/96x96.png"
+                                            alt="Placeholder image"
+                                        />
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p>Hohe Verluste bei landwirtschaftlicher Erzeugung, Verringerung der für Anbau geeigenten Flächen</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                 </div>
             </div>
         </section>
-        
+
+        <section class="section" id="quellen">
+            <div class="container">
+                <div class="columns is-8">
+                    <div class="column">
+                        <div class="content">
+                            <h2 class="title mb-6">Woher stammen unsere Daten?</h2>
+                            <p>Wir sammeln unsere Daten aus mehreren unabhängigen Instituten:</p>
+                            <ul>
+                                <li>
+                                    <a class="is-underlined" href="https://climatetrace.org/">Climate TRACE</a>
+                                </li>
+                                <li>
+                                    <a class="is-underlined" href="https://ourworldindata.org/co2-emissions/">Our World in Data (Global Change Data Lab)</a>
+                                </li>
+                                <li>
+                                    <a class="is-underlined" href="https://www.europarl.europa.eu/topics/de/topic/climate-and-environment/">Europäisches Parlament</a>
+                                </li>
+                                <li>
+                                    <a class="is-underlined" href="https://www.ipcc.ch/">Intergovernmental Panel on Climate Change (IPCC)</a>
+                                </li>
+                                <li>
+                                    <a class="is-underlined" href="https://www.umweltbundesamt.de/themen/klima-energie/">Umweltbundesamt</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="content">
+                            <h2 class="title mb-6">Was bringt die Zukunft für diese Plattform?</h2>
+                            <p>Wir werden die Datenbank kontinuierlich um weitere Länder und Unternehmen erweitern. Hinzukommen in der Zukunft auch weitere Filtermöglichkeiten wie z.B. das Filtern nach Sektoren, in denen die Unternehmen tätig sind. Zudem werden wir auch weitere Gase wie zum Beispiel Metha (CH<sub>4</sub>) und Distickstoffmonoxid (N<sub>2</sub>O) erweitern.</p>
+                        </div>
+                    </div>
+
+                
+            </div>
+
+        </section>
+    
     </main>
 
     <footer class="footer has-background-info">
