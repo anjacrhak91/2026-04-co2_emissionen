@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@bluefantail/bulma-list/css/bulma-list.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-slider@2.0.0/dist/css/bulma-slider.min.css">
     <link rel="stylesheet" href="/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>Der CO<sub>2</sub>-Footprint-Vergleich</title>
     <link rel="icon" type="image/x-icon" href="/img/logoipsum-415.svg">
 </head>
@@ -80,7 +81,50 @@
         </div>
         </section>
 
-        <section class="section is-medium">
+        <section class="section is-medium" id="vergleich">
+            <div id="app" class="container">
+                <form id="search">
+                <div>Suche</div>
+                <input class="input is-primary" name="query" v-model="searchQuery" placeholder="Suchen">
+
+                <div>Filtern nach Typ:</div>
+                <div class="select is-primary">
+                    <select class="is-hovered" v-model="filterTyp">
+                        <option value="">Alle</option>
+                        <option value="Land">Land</option>
+                        <option value="Unternehmen">Unternehmen</option>
+                    </select>
+                </div>
+
+                <div>Filtern nach Kontinent:</div>
+                <div class="select is-primary">
+                    <select class="is-hovered" v-model="filterKontinent">
+                        <option value="">Alle</option>
+                        <option value="Afrika">Afrika</option>
+                        <option value="Antarktis">Antarktis</option>
+                        <option value="Asien">Asien</option>
+                        <option value="Australien">Australien</option>
+                        <option value="Europa">Europa</option>
+                        <option value="Nordamerika">Nordamerika</option>
+                        <option value="Südamerika">Südamerika</option>
+                    </select>
+                </div>
+
+                <div>CO<sub>2</sub>-Emissionen</div>
+                <input class="slider is-fullwidth is-primary" id="emission-range" type="range" v-model="minEmissionen" min="0" max="13000000000" step="100000000">
+                <span>{{ (minEmissionen / 1000000).toFixed(0) }} Millionen Tonnen</span>
+
+                </form>
+
+                
+                <emissionen-grid
+                :data="gridData"
+                :columns="gridColumns"
+                :filter-key="searchQuery"
+                :filter-typ="filterTyp"
+                :filter-kontinent="filterKontinent"
+                :min-emissionen="minEmissionen">
+                </emissionen-grid>
 
         </section>
 
@@ -207,4 +251,115 @@
                 </div>
             </div>
     </footer>
+
+    <script>
+        const EmissionenGrid = {
+            props: {
+                data: Array,
+                columns: Array,
+                filterKey: String,
+                filterTyp: String,
+                filterKontinent: String,
+                minEmissionen: Number
+        },
+            data() {
+                return {
+                    sortKey: '',
+                    sortOrders: this.columns.reduce((o, key) => ((o[key] = 1), o), {})
+                }
+            },
+            computed: {
+                filteredData() {
+                    const sortKey = this.sortKey
+                    const filterKey = this.filterKey && this.filterKey.toLowerCase()
+                    const order = this.sortOrders[sortKey] || 1
+                    let data = this.data
+                    //1. Suche
+                    if (filterKey) {
+                    data = data.filter((row) => {
+                        return Object.keys(row).some((key) => {
+                        return String(row[key]).toLowerCase().indexOf(filterKey) > -1
+                        })
+                    })
+                    }
+                    //2. Sortierung
+                    if (sortKey) {
+                    data = data.slice().sort((a, b) => {
+                        a = a[sortKey]
+                        b = b[sortKey]
+                        return (a === b ? 0 : a > b ? 1 : -1) * order
+                    })
+                    }
+                    //3. Filter nach Typ
+                    if (this.filterTyp) {
+                    data = data.filter(row => row.Typ === this.filterTyp);
+                    }
+                    //4. Filter nach Kontinent
+                    if (this.filterKontinent) {
+                    data = data.filter(row => row.kontinent === this.filterKontinent);
+                    }
+                    //5. Range-Filter
+                    if (this.minEmissionen > 0) {
+                    data = data.filter(row => row.emissionen >= this.minEmissionen);
+                    }
+
+                    return data
+                }
+            },
+            methods: {
+                sortBy(key) {
+                    this.sortKey = key
+                    this.sortOrders[key] = this.sortOrders[key] * -1
+                },
+                capitalize(str) {
+                    return str.charAt(0).toUpperCase() + str.slice(1)
+                }
+            },
+
+        template: `
+        <table v-if="filteredData.length" class="table is-stripped is-hoverable is-fullwidth">
+            <thead>
+                <tr>
+                    <th v-for="key in columns"
+                        @click="sortBy(key)"
+                        :class="{ active: sortKey == key }">
+                        {{ capitalize(key) }}
+                        <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
+                        </span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="entry in filteredData">
+                    <td v-for="key in columns">
+                    {{entry[key]}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p v-else>Keine Einträge gefunden.</p>
+        `
+        }
+
+        Vue.createApp({
+            components: {
+                EmissionenGrid
+            },
+            data(){
+                return {
+                    searchQuery: '',
+                    filterTyp: '',
+                    filterKontinent: '',
+                    minEmissionen: 0,
+                    gridColumns: ['Akteur', 'Typ', 'Region/Sitz', 'emissionen'],
+                    gridData: [
+                    {'Akteur': "Argentinien", 'Typ': "Land", 'Region/Sitz': "Südamerika", emissionen: 171059260, kontinent: "Südamerika"},
+                    {'Akteur': "USA", 'Typ': "Land", 'Region/Sitz': "Nordamerika", emissionen: 4904120000, kontinent: "Nordamerika"},
+                    {'Akteur': "Schweden", 'Typ': "Land", 'Region/Sitz': "Europa", emissionen: 38096652, kontinent: "Europa"},
+                    {'Akteur': "Aramco", 'Typ': "Unternehmen", 'Region/Sitz': "Saudi Arabien", emissionen: 1839000000, kontinent: "Asien"}
+                    ]
+                }
+            }
+        }).mount('#app')
+    </script>
 </body>
