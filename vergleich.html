@@ -17,7 +17,7 @@
             <div class="navbar-brand">
                 <a class="navbar-item" href="/index.html">
                 <figure class="image mr-6">
-                    <img src="img/logoipsum-414.svg" alt="Logo">
+                    <img class="navbar-logo" src="img/co2-logo.png" alt="Logo">
                 </figure>
                 </a>
     
@@ -52,7 +52,7 @@
             <div class="hero-body">
                 <div class="columns is-8">
                     <div class="column">
-                        <img class="has-border-radius-medium" src="/img/co2-emissionen-klimawandel-100-1920x1080.jpg" alt="Dummy-Bild">
+                        <img class="has-border-radius-medium" src="/img/forest-with-co2-leaf.webp" alt="Dummy-Bild">
                     </div>
                     
                     <div class="column is-two-fifths is-align-content-center">
@@ -83,7 +83,8 @@
 
         <section class="section is-medium" id="vergleich">
             <div id="app" class="container">
-                <h2 class="title is-3 mb-6">Der große CO<sub>2</sub>-Emissionsvergleich</h2>
+                <h2 class="title is-3">Der große CO<sub>2</sub>-Emissionsvergleich</h2>
+                <p class="subtitle is-5 mb-5 ">Angaben der CO<sub>2</sub>-Emissionen in Tonnen</p>
                 <div class="box">
                     <div class="columns">
                         <div class="column">
@@ -125,6 +126,8 @@
                             <span class="is-size-7">{{ (minEmissionen / 1000000).toFixed(0) }} Millionen Tonnen</span>
                         </div>
                     </div>
+                    
+                    
                 
                     <div class="container">
                         <emissionen-grid
@@ -246,7 +249,7 @@
             <div class="container">
                 <div class="columns is-vcentered">
                     <div id="footer-logo" class="column is-one-quarter">
-                        <img src="/img/logoipsum-414.svg" alt="CO2-Footprint-Vergleich Logo" width="30%">
+                        <img src="/img/co2-logo.png" alt="CO2-Footprint-Vergleich Logo" width="20%">
                         <p class="is-underlined"><a href="mailto:anja.crhak@iu-study.org">anja.crhak@iu-study.org</a></p>
                     </div>
                     <div class="column has-text-centered">
@@ -333,31 +336,40 @@
                 },
                 capitalize(str) {
                     return str.charAt(0).toUpperCase() + str.slice(1)
-                }
-            },
+                },
+                formatNumber(key) {
+                    if (typeof key === 'number') {
+                        return key.toLocaleString('de-DE');
+                    }
+                    return key;
+            }
+        },
 
         template: `
-        <table v-if="filteredData.length" class="table is-hoverable is-fullwidth">
-            <thead>
-                <tr>
-                    <th v-for="key in columns"
-                        @click="sortBy(key)"
-                        :class="{ active: sortKey == key }">
-                        {{ capitalize(key) }}
-                        <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
-                        </span>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="entry in filteredData">
-                    <td v-for="key in columns">
-                    {{entry[key]}}
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <p v-else>Keine Einträge gefunden.</p>
+        <div class="table-container">
+            <table v-if="filteredData.length" class="table is-hoverable is-fullwidth">
+                <thead>
+                    <tr>
+                        <th v-for="key in columns"
+                            @click="sortBy(key)"
+                            :class="{ active: sortKey == key }">
+                            {{ capitalize(key) }}
+                            <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
+                            </span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="entry in filteredData">
+                        <td v-for="key in columns">
+                        {{formatNumber(entry[key])}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p v-else>Keine Einträge gefunden.</p>
+        </div
+       >
         `
         }
 
@@ -371,7 +383,7 @@
                     filterTyp: '',
                     filterKontinent: '',
                     minEmissionen: 0,
-                    gridColumns: ['Akteur', 'Typ', 'Region/Sitz', 'emissionen'],
+                    gridColumns: ['Akteur', 'emissionen', 'Typ', 'Region/Sitz'],
                     gridData: [
                     {'Akteur': "Argentinien", 'Typ': "Land", 'Region/Sitz': "Südamerika", emissionen: 171059260, kontinent: "Südamerika"},
                     {'Akteur': "USA", 'Typ': "Land", 'Region/Sitz': "Nordamerika", emissionen: 4904120000, kontinent: "Nordamerika"},

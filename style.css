@@ -26,6 +26,11 @@ html, body {
     width: 100%;
 }
 
+.navbar-logo {
+    max-height: 50px !important;
+    width: auto;
+}
+
 .has-border-primary {
     border: 1px solid var(--bulma-primary);
     border-radius: 0.75rem;
