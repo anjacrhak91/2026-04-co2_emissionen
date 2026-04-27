@@ -56,7 +56,7 @@
                     </div>
                     
                     <div class="column is-two-fifths is-align-content-center">
-                        <h1 class="title">Der interaktive CO<sub>2</sub>-Emissionsvergleich</h1>
+                        <h1 class="title is-2">Der interaktive CO<sub>2</sub>-Emissionsvergleich</h1>
                         <p>Vergleiche die jährlichen CO-Emissionswerte von Ländern und Unternehmen weltweit mit unseren unabhängigen Daten.</p>
                         <div class="field is-grouped">
                             <p><a class="button is-primary mt-5" href="#vergleich">Zum Vergleich</a></p>
@@ -83,55 +83,68 @@
 
         <section class="section is-medium" id="vergleich">
             <div id="app" class="container">
-                <form id="search">
-                <div>Suche</div>
-                <input class="input is-primary" name="query" v-model="searchQuery" placeholder="Suchen">
-
-                <div>Filtern nach Typ:</div>
-                <div class="select is-primary">
-                    <select class="is-hovered" v-model="filterTyp">
-                        <option value="">Alle</option>
-                        <option value="Land">Land</option>
-                        <option value="Unternehmen">Unternehmen</option>
-                    </select>
+                <h2 class="title is-3 mb-6">Der große CO<sub>2</sub>-Emissionsvergleich</h2>
+                <div class="box">
+                    <div class="columns">
+                        <div class="column">
+                            <form id="search">
+                                <div class="has-text-weight-semibold mb-2 is-size-7">Suche</div>
+                                <input class="input is-primary is-small" name="query" v-model="searchQuery" placeholder="Suchen">
+                            </form>
+                        </div>
+                        
+                        <div class="column">
+                            <div class="has-text-weight-semibold mb-2 is-size-7">Filtern nach Typ:</div>
+                            <div class="select is-primary is-fullwidth is-small">
+                                <select class="is-hovered" v-model="filterTyp">
+                                    <option value="">Alle</option>
+                                    <option value="Land">Land</option>
+                                    <option value="Unternehmen">Unternehmen</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="column">
+                            <div class="has-text-weight-semibold mb-2 is-size-7">Filtern nach Kontinent:</div>
+                            <div class="select is-primary is-fullwidth is-small">
+                                <select class="is-hovered" v-model="filterKontinent">
+                                    <option value="">Alle</option>
+                                    <option value="Afrika">Afrika</option>
+                                    <option value="Antarktis">Antarktis</option>
+                                    <option value="Asien">Asien</option>
+                                    <option value="Australien">Australien</option>
+                                    <option value="Europa">Europa</option>
+                                    <option value="Nordamerika">Nordamerika</option>
+                                    <option value="Südamerika">Südamerika</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="has-text-weight-semibold mb-2 is-size-7">CO<sub>2</sub>-Emissionen</div>
+                            <input class="slider is-fullwidth is-primary" id="emission-range" type="range" v-model="minEmissionen" min="0" max="13000000000" step="100000000">
+                            <span class="is-size-7">{{ (minEmissionen / 1000000).toFixed(0) }} Millionen Tonnen</span>
+                        </div>
+                    </div>
+                
+                    <div class="container">
+                        <emissionen-grid
+                        :data="gridData"
+                        :columns="gridColumns"
+                        :filter-key="searchQuery"
+                        :filter-typ="filterTyp"
+                        :filter-kontinent="filterKontinent"
+                        :min-emissionen="minEmissionen">
+                        </emissionen-grid>
+                    </div>
                 </div>
-
-                <div>Filtern nach Kontinent:</div>
-                <div class="select is-primary">
-                    <select class="is-hovered" v-model="filterKontinent">
-                        <option value="">Alle</option>
-                        <option value="Afrika">Afrika</option>
-                        <option value="Antarktis">Antarktis</option>
-                        <option value="Asien">Asien</option>
-                        <option value="Australien">Australien</option>
-                        <option value="Europa">Europa</option>
-                        <option value="Nordamerika">Nordamerika</option>
-                        <option value="Südamerika">Südamerika</option>
-                    </select>
-                </div>
-
-                <div>CO<sub>2</sub>-Emissionen</div>
-                <input class="slider is-fullwidth is-primary" id="emission-range" type="range" v-model="minEmissionen" min="0" max="13000000000" step="100000000">
-                <span>{{ (minEmissionen / 1000000).toFixed(0) }} Millionen Tonnen</span>
-
-                </form>
 
                 
-                <emissionen-grid
-                :data="gridData"
-                :columns="gridColumns"
-                :filter-key="searchQuery"
-                :filter-typ="filterTyp"
-                :filter-kontinent="filterKontinent"
-                :min-emissionen="minEmissionen">
-                </emissionen-grid>
 
         </section>
 
         <section class="section is-medium has-background-info" id="anleitung">
-            <h2 class="title mb-6">Wie kannst du die Daten analysieren?</h2>
-
             <div class="container">
+                <h2 class="title is-3 mb-6">Wie kannst du die Daten analysieren?</h2>
                 <div class="columns is-8">
                     <div class="column">
                         <div class="card">
@@ -186,9 +199,8 @@
         </section>
 
         <section class="section is-medium" id="quellen">
-            <h2 class="title mb-6">Woher stammen die Daten?</h2>
-
             <div class="container">
+                <h2 class="title is-3 mb-6">Woher stammen die Daten?</h2>
                 <div class="columns is-8">
                     <div class="column">
                         <div class="card">
@@ -317,7 +329,7 @@
             },
 
         template: `
-        <table v-if="filteredData.length" class="table is-stripped is-hoverable is-fullwidth">
+        <table v-if="filteredData.length" class="table is-hoverable is-fullwidth">
             <thead>
                 <tr>
                     <th v-for="key in columns"

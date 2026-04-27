@@ -86,3 +86,32 @@ html, body {
     overflow-wrap: break-word;
     word-break: break-word;
 }
+
+/*Styles der Tabelle*/
+.table thead td, .table thead th {
+  background-color: #DEEDDF;
+  cursor: pointer;
+  user-select: none;
+}
+
+.arrow {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  margin-left: 5px;
+  
+}
+
+.arrow.asc {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #363636;
+}
+
+.arrow.dsc {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #363636;
+}
+
