@@ -48,7 +48,7 @@
 
         <section class="hero">
             <div class="hero-body">
-                <div class="columns is-8">
+                <div class="columns is-8 is-stack-tablet">
                     <div class="column is-two-fifths is-align-content-center">
                         <h1 class="title is-2">Transparenz für unser Klima mit dem CO<sub>2</sub>-Footprint-Vergleich!</h1>
                         <p>Wie viel CO<sub>2</sub> wird auf der Welt ausgestoßen? Wie groß ist der CO<sub>2</sub>-Fußabdruck bestimmter Länder? Welche Unternehmen stoßen am meisten aus? Vergleiche die jährlichen CO<sub>2</sub>-Emissionen von Ländern und Konzernen weltweit mit unserem Vergleichstool.</p>
@@ -56,7 +56,7 @@
                     </div>
 
                     <div class="column">
-                        <img class="has-border-radius-medium" src="/img/human-footprints-in-forest.webp" alt="Fußabdrücke im Wald von oben">
+                        <img class="has-border-radius-medium" src="/img/menschliche-fussabdruecke-im-wald.webp" alt="Fußabdrücke im Wald von oben">
                     </div>
                 </div>
             </div>
@@ -89,8 +89,8 @@
                     </div>
                     <div class="level-item has-text-centered">
                         <div>
-                            <p class="title is-2">129.2093M </p>
-                            <p class="heading has-text-weight-semibold">Tonnen</p>
+                            <p class="title is-2">129.209.392 M </p>
+                            <p class="heading has-text-weight-semibold">Tonnen CO<sub>2</sub></p>
                         </div>
                     </div>
                     <div class="level-item has-text-centered">
@@ -165,16 +165,16 @@
         </section>
 
         <section class="section" id="einblicke">
-            <div class="columns is-8">
-                <div class="column is-three-fifths">
-                    <img class="has-border-radius-medium" src="/img/table-preview.webp" alt="Dummy-Bild">
-                </div>
-
+            <div class="columns is-8 is-stack-tablet">
                 <div class="column is-align-content-center">
                     <h2 class="title is-3 mb-3">Wie wir vergleichen</h2>
                     <h3 class="subtitle has-text-weight-semibold">Einzigartige Einblicke in die jährlichen CO<sub>2</sub>-Emissionen von Ländern und Unternehmen</h3>
                     <p>Mit unserer interaktiven Datenbank können Emissionswerte von Ländern und Unternehmen direkt gegenübergestellt werden. Die übersichtliche Tabelle kann nach verschiedenen Kategorien sortiert und gefiltert werden. Vergleiche Unternehmen mit Ländern, um ein Gefühl für die wahren Größenordnungen zu bekommen, lass dir die Top-Emittenten anzeigen oder suche nach spezifischen Organisationen.</p>
                     <p><a class="button is-primary mt-5" href="/vergleich.html">Jetzt analysieren</a></p>
+                </div>
+
+                <div class="column is-three-fifths">
+                    <img class="has-border-radius-medium" src="/img/tabelle-vorschau.webp" alt="Vorschau der Datentabelle des CO2-Footprintvergleichs">
                 </div>
 
             </div>
@@ -275,7 +275,7 @@
                             <div class="card-image">
                                 <figure class="image is-4by3">
                                 <img
-                                    src="/img/man-auf-fahrrad-zur-arbeit.webp"
+                                    src="/img/mann-auf-fahrrad-zur-arbeit.webp"
                                     alt="Ein Mann fährt mit dem Fahrrad zur Arbeit vor einem großen Bürogebäude."
                                 />
                                 </figure>
@@ -385,3 +385,27 @@
     </footer>
 </body>
 </html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Add a click event on each of them
+  $navbarBurgers.forEach( el => {
+    el.addEventListener('click', () => {
+
+      // Get the target from the "data-target" attribute
+      const target = el.dataset.target;
+      const $target = document.getElementById(target);
+
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      el.classList.toggle('is-active');
+      $target.classList.toggle('is-active');
+
+    });
+  });
+
+});
+</script>

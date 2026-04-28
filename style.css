@@ -1,3 +1,4 @@
+/*Globale Farbanpassungen*/
 :root {
             --bulma-primary: #008009;
             --bulma-primary-h: 124deg;
@@ -20,34 +21,33 @@
             --bulma-info-s: 29%;
             --bulma-info-l: 90%;
 }
-
+/*Globaler Overflow*/
 html, body {
     overflow-x: hidden; /* Verhindert horizontalen Scroll komplett */
     width: 100%;
 }
 
-.navbar-logo {
-    max-height: 50px !important;
-    width: auto;
-}
-
+/*Border Primary mit Radius*/
 .has-border-primary {
     border: 1px solid var(--bulma-primary);
     border-radius: 0.75rem;
 }
 
+/*Medium Border-Radius für Elemente*/
 .has-border-radius-medium {
     border-radius: 0.75rem;
 }
 
+/*Small Border-Radius für Elemente*/
 .has-border-radius-small {
     border-radius: 0.25rem;
 }
-
+/*Link-Farbe für Hover*/
 .link-hover-primary:hover {
     color: var(--bulma-primary);
 }
 
+/*Navbar-Anpassungen*/
 .navbar-item:hover {
     background-color: transparent;
     color: var(--bulma-primary);
@@ -65,6 +65,12 @@ html, body {
     background-color: var(--bulma-info);
 }
 
+.navbar-logo {
+    max-height: 50px !important;
+    width: auto;
+}
+
+/*Footer-Anpassungen für Privacy Links*/
 @media screen and (max-width: 767px) {
     #privacy-links {
         justify-content: center;
@@ -83,6 +89,7 @@ html, body {
     }
 }
 
+/*Allgemeine Gap-Anpassung*/
 .has-gap-medium {
     gap: 0.5rem;
 }
@@ -99,6 +106,7 @@ html, body {
   user-select: none;
 }
 
+/*Pfeile für Sortierung in Tabelle*/
 .arrow {
   display: inline-block;
   vertical-align: middle;
@@ -118,4 +126,24 @@ html, body {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-top: 6px solid #363636;
+}
+
+/*Level Gap für mobile größer*/
+@media screen and (max-width: 1023px) {
+    .level {
+    gap: 2rem;
+    }
+    .level.is-mobile {
+        gap: 1rem;
+    }
+}
+
+/* Columns: Spalten untereinander*/
+@media screen and (max-width: 1023px) {
+    .is-stack-tablet {
+        flex-direction: column;
+    }
+    .is-stack-tablet .column {
+        width: 100%;
+    }
 }

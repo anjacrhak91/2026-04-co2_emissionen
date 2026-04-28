@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-slider@2.0.0/dist/css/bulma-slider.min.css">
     <link rel="stylesheet" href="/style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <title>Der CO<sub>2</sub>-Footprint-Vergleich</title>
+    <title>Der interaktive CO2-Footprint-Vergleich | Vergleich</title>
     <link rel="icon" type="image/x-icon" href="/img/co2-vergleich-favicon.ico">
 </head>
 
@@ -50,9 +50,9 @@
     <main>
         <section class="hero">
             <div class="hero-body">
-                <div class="columns is-8">
+                <div class="columns is-8 is-stack-tablet">
                     <div class="column">
-                        <img class="has-border-radius-medium" src="/img/forest-with-co2-leaf.webp" alt="Dummy-Bild">
+                        <img class="has-border-radius-medium" src="/img/wald-mit-blatt-co2.webp" alt="Wald mit einem Blatt-Adruck und der Aufschrift CO2.">
                     </div>
                     
                     <div class="column is-two-fifths is-align-content-center">
@@ -422,3 +422,28 @@
         }).mount('#app')
     </script>
 </body>
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Add a click event on each of them
+  $navbarBurgers.forEach( el => {
+    el.addEventListener('click', () => {
+
+      // Get the target from the "data-target" attribute
+      const target = el.dataset.target;
+      const $target = document.getElementById(target);
+
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      el.classList.toggle('is-active');
+      $target.classList.toggle('is-active');
+
+    });
+  });
+
+});
+</script>

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@bluefantail/bulma-list/css/bulma-list.min.css">
     <link rel="stylesheet" href="/style.css">
-    <title>Der Hintergrund zu unserem CO<sub>2</sub>-Footprint-Vergleich | Hintergrund</title>
+    <title>Der interaktive CO2-Footprint-Vergleich | Hintergrund</title>
     <link rel="icon" type="image/x-icon" href="/img/co2-vergleich-favicon.ico">
 </head>
 
@@ -50,7 +50,7 @@
 
         <section class="hero">
             <div class="hero-body">
-                <div class="columns is-8">
+                <div class="columns is-8 is-stack-tablet">
                     <div class="column">
                         <img class="has-border-radius-medium" src="/img/co2-emissionen-reduzieren-hand.webp" alt="">
                     </div>
@@ -112,7 +112,7 @@
         </section>
 
         <section class="section is-medium" id="klimawandel">
-            <div class="columns is-8">
+            <div class="columns is-8 is-stack-tablet">
 
                 <div class="column is-align-content-center">
                     <div class="content">
@@ -122,7 +122,7 @@
                 </div>
 
                 <div class="column is-two-fifths is-align-content-center">
-                    <img class="has-border-radius-medium" src="/img/trockene-erde-pflanze.webp" alt="Dummy-Bild">
+                    <img class="has-border-radius-medium" src="/img/trockene-erde-pflanze.webp" alt="Eine Pflanze wächst aus sehr trockenem Boden.">
                 </div>
 
             </div>
@@ -130,8 +130,8 @@
 
         <section class="section has-background-info mt-6" id="ursachen">
                 <h2 class="title is-3 mb-6">Was verursacht den Anstieg der Treibhausgase?</h2>
-                <div class="columns is-multiline ">
-                    <div class="column is-flex is-flex-direction-column is-full-mobile is-one-third-tablet is-one-fifth-desktop">
+                <div class="columns is-multiline is-6-mobile">
+                    <div class="column is-flex is-flex-direction-column">
                         <div class="container has-text-centered">
                             <figure class="image is-128x128 is-inline-block">
                                 <img src="/img/icons/verbrennung-icon.png" />
@@ -140,7 +140,7 @@
                         </div>
                     </div>
 
-                    <div class="column is-flex is-flex-direction-column is-full-mobile is-one-third-tablet is-one-fifth-desktop">
+                    <div class="column is-flex is-flex-direction-column">
                         <div class="container has-text-centered">
                             <figure class="image is-128x128 is-inline-block">
                                 <img src="/img/icons/abholzung-icon.png" />
@@ -149,7 +149,7 @@
                         </div>
                     </div>
 
-                    <div class="column is-flex is-flex-direction-column is-full-mobile is-one-third-tablet is-one-fifth-desktop">
+                    <div class="column is-flex is-flex-direction-column">
                         <div class="container has-text-centered">
                             <figure class="image is-128x128 is-inline-block">
                                 <img src="/img/icons/viehzucht-icon.png" />
@@ -158,7 +158,7 @@
                         </div>
                     </div>
 
-                    <div class="column is-flex is-flex-direction-column is-full-mobile is-one-third-tablet is-one-fifth-desktop">
+                    <div class="column is-flex is-flex-direction-column">
                         <div class="container has-text-centered">
                             <figure class="image is-128x128 is-inline-block">
                                 <img src="/img/icons/duenger-icon.png" />
@@ -167,7 +167,7 @@
                         </div>
                     </div>
 
-                    <div class="column is-flex is-flex-direction-column is-full-mobile is-one-third-tablet is-one-fifth-desktop">
+                    <div class="column is-flex is-flex-direction-column">
                         <div class="container has-text-centered">
                             <figure class="image is-128x128 is-inline-block">
                                 <img src="/img/icons/fluorierte-gase-icon.png" />
@@ -551,4 +551,29 @@
             </div>
     </footer>
 </body>
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Add a click event on each of them
+  $navbarBurgers.forEach( el => {
+    el.addEventListener('click', () => {
+
+      // Get the target from the "data-target" attribute
+      const target = el.dataset.target;
+      const $target = document.getElementById(target);
+
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      el.classList.toggle('is-active');
+      $target.classList.toggle('is-active');
+
+    });
+  });
+
+});
+</script>
 
