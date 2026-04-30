@@ -147,3 +147,21 @@ html, body {
         width: 100%;
     }
 }
+
+/*Farben der Tabs anpassen*/
+/* Standard Rahmenfarbe auf 'info' setzen */
+.tabs.is-toggle a {
+    border-color: var(--bulma-primary);
+}
+
+/* Hover-Zustand: Rahmen und Textfarbe anpassen */
+.tabs.is-toggle li a:hover {
+    border-color: var(--bulma-primary);
+    background-color: var(--bulma-info);
+}
+
+/* Aktiver Zustand (falls benötigt) */
+.tabs.is-toggle li.is-active a {
+    background-color: var(--bulma-info);
+    border-color: var(--bulma-primary);
+}
