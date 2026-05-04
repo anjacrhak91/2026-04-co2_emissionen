@@ -128,10 +128,10 @@ html, body {
   border-top: 6px solid #363636;
 }
 
-/*Level Gap für mobile größer*/
+/*Level Gap für mobile und tablet größer*/
 @media screen and (max-width: 1023px) {
     .level {
-    gap: 2rem;
+        gap: 2rem;
     }
     .level.is-mobile {
         gap: 1rem;
@@ -160,7 +160,7 @@ html, body {
     background-color: var(--bulma-info);
 }
 
-/* Aktiver Zustand (falls benötigt) */
+/* Aktiver Zustand*/
 .tabs.is-toggle li.is-active a {
     background-color: var(--bulma-info);
     border-color: var(--bulma-primary);
