@@ -70,7 +70,7 @@ html, body {
     width: auto;
 }
 
-/*Footer-Anpassungen für Privacy Links*/
+/*Responsive Footer-Anpassungen*/
 @media screen and (max-width: 767px) {
     #privacy-links {
         justify-content: center;
@@ -135,16 +135,6 @@ html, body {
     }
     .level.is-mobile {
         gap: 1rem;
-    }
-}
-
-/* Columns: Spalten untereinander*/
-@media screen and (max-width: 1023px) {
-    .is-stack-tablet {
-        flex-direction: column;
-    }
-    .is-stack-tablet .column {
-        width: 100%;
     }
 }
 
