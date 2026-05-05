@@ -1,12 +1,12 @@
 const EmissionenGrid = {
     props: {
-        data: Array,
         columns: Array,
+        data: Array,
         filterKey: String,
         filterTyp: String,
         filterKontinent: String,
         minEmissionen: Number
-},
+    },
     data() {
         return {
             sortKey: '',
@@ -73,34 +73,32 @@ const EmissionenGrid = {
             }
             return key;
     }
-},
-
-template: `
-<div class="table-container">
-    <table v-if="filteredData.length" class="table is-hoverable is-fullwidth">
-        <thead>
-            <tr>
-                <th v-for="key in columns"
-                    @click="sortBy(key)"
-                    :class="{ active: sortKey == key }">
-                    {{ capitalize(key) }}
-                    <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
-                    </span>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="entry in filteredData">
-                <td v-for="key in columns">
-                {{formatNumber(entry[key])}}
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <p v-else>Keine Einträge gefunden.</p>
-</div
->
-`
+    },
+    template: `
+        <div class="table-container">
+            <table v-if="filteredData.length" class="table is-hoverable is-fullwidth">
+                <thead>
+                    <tr>
+                        <th v-for="key in columns"
+                            @click="sortBy(key)"
+                            :class="{ active: sortKey == key }">
+                            {{ capitalize(key) }}
+                            <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
+                            </span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="entry in filteredData">
+                        <td v-for="key in columns">
+                        {{formatNumber(entry[key])}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p v-else>Keine Einträge gefunden.</p>
+        </div>
+    `
 }
 
 Vue.createApp({
