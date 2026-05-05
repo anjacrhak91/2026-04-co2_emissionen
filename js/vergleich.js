@@ -21,41 +21,41 @@ const EmissionenGrid = {
             let data = this.data
             //1. Suche
             if (filterKey) {
-            data = data.filter((row) => {
-                return Object.keys(row).some((key) => {
-                return String(row[key]).toLowerCase().indexOf(filterKey) > -1
+                data = data.filter((row) => {
+                    return Object.keys(row).some((key) => {
+                    return String(row[key]).toLowerCase().indexOf(filterKey) > -1
+                    })
                 })
-            })
             }
             //2. Sortierung
             if (sortKey) {
-            data = data.slice().sort((a, b) => {
-                a = a[sortKey]
-                b = b[sortKey]
-                return (a === b ? 0 : a > b ? 1 : -1) * order
-            })
+                data = data.slice().sort((a, b) => {
+                    a = a[sortKey]
+                    b = b[sortKey]
+                    return (a === b ? 0 : a > b ? 1 : -1) * order
+                    })
             } else {
                 //Standard-Sortierung
                 data = data.slice().sort((a, b) => {
-                //Primär: Typ (Land vor Unternehmen)
+                    //Primär: Typ (Land vor Unternehmen)
                     if (a.Typ !== b.Typ) {
-                    return a.Typ > b.Typ ? 1 : -1;
-                }
-                //Sekundär: Akteur alphabetisch
-                return a.Akteur.localeCompare(b.Akteur);
-            })
+                        return a.Typ > b.Typ ? 1 : -1;
+                    }   
+                    //Sekundär: Akteur alphabetisch
+                    return a.Akteur.localeCompare(b.Akteur);
+                    })
             }
             //3. Filter nach Typ
             if (this.filterTyp) {
-            data = data.filter(row => row.Typ === this.filterTyp);
+                data = data.filter(row => row.Typ === this.filterTyp);
             }
             //4. Filter nach Kontinent
             if (this.filterKontinent) {
-            data = data.filter(row => row.kontinent === this.filterKontinent);
+                data = data.filter(row => row.kontinent === this.filterKontinent);
             }
             //5. Range-Filter
             if (this.minEmissionen > 0) {
-            data = data.filter(row => row.emissionen >= this.minEmissionen);
+                data = data.filter(row => row.emissionen >= this.minEmissionen);
             }
 
             return data
