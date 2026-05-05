@@ -37,10 +37,12 @@ const EmissionenGrid = {
             } else {
                 //Standard-Sortierung
                 data = data.slice().sort((a, b) => {
-                if (a.Typ !== b.Typ) {
-                    return a.Typ === 'Land' ? -1 : 1; // 'Land' kommt vor 'Unternehmen'
+                //Primär: Typ (Land vor Unternehmen)
+                    if (a.Typ !== b.Typ) {
+                    return a.Typ > b.Typ ? 1 : -1;
                 }
-                return a.Akteur.localeCompare(b.Akteur); // Alphabetisch
+                //Sekundär: Akteur alphabetisch
+                return a.Akteur.localeCompare(b.Akteur);
             })
             }
             //3. Filter nach Typ
